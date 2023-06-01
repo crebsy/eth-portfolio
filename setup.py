@@ -1,7 +1,14 @@
 from setuptools import find_packages, setup # type: ignore
+import re
 
 with open("requirements.txt", "r") as f:
-    requirements = list(map(str.strip, f.read().split("\n")))[:-1]
+    requirements = []
+    for line in f.read().split("\n"):
+        m = re.match("git\+https://www.github.com/[^/]+/([^/]+)@[^/]+", line)
+        if m:
+            requirements.append(f"{m[1]} @ {line.strip()}")
+        else:
+            requirements.append(line.strip())
 
 setup(
     name='eth-portfolio',

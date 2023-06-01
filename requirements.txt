@@ -2,4 +2,4 @@ checksum_dict>=1.1.2
 dank_mids>=4.20.36
 eth_retry>=0.1.15,<1
 pandas>=1.4.3,<1.6
-ypricemagic>=2.1.6
+git+https://www.github.com/crebsy/ypricemagic@7e0639e6682658c4ea0527376c5270c978bf6b05
